@@ -144,7 +144,7 @@ Well in webm player there is `NO` audio support because it's broken lol so now w
 My solution is to `Audio Sync` a way of Synchronizing the audio version of the video to the video `You must have an ogg file either just the video's audio or just empty audio that lasts as long as the video's time (i made a solution so if you don't have audio on your video then just don't make an ogg file)`. \
 So back to that ffmpeg change directory folder is a ffprobe command template i have
 ```cmd
-./ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of default=nokey=1:noprint_wrappers=1 "yourvideo.mp4"
+ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of default=nokey=1:noprint_wrappers=1 "yourvideo.mp4"
 ```
 Ok so my recommendation is to Convert your video to webm then convert that webm to an mp4 because sometimes there are frame losses to webm files which fails the `Audio Sync`. \
 This command logs the number of frames your video has and now you may ask. \
